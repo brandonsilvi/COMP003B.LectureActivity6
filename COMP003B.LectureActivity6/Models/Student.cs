@@ -15,5 +15,7 @@ namespace COMP003B.LectureActivity6.Models
         
         //navigation for collection
         public virtual ICollection<Enrollment>? Enrollments { get; set; }
+        
+        public int Age { get; set; }
     }
 }
