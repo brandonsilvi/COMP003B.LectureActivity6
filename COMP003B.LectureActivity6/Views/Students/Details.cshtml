@@ -1,0 +1,18 @@
+@model COMP003B.LectureActivity6.Models.Student
+
+<h2>Student Details</h2>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Age:</strong> @Model.Age</p>
+@if (ViewBag.Courses != null)
+{
+    <h3>Courses</h3>
+    <ul>
+        @foreach (var course in ViewBag.Courses)
+        {
+            <li>@course.Title</li>
+        }
+    </ul>
+}
+<a asp-action="Index">Back to List</a>

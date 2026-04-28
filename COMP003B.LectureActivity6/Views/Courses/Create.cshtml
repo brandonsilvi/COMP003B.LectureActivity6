@@ -1,0 +1,14 @@
+@model COMP003B.LectureActivity6.Models.Course
+
+<h2>Create Course</h2>
+
+<form asp-action="Create">
+    <div>
+        <label>Title</label>
+        <input asp-for="Title" />
+    </div>
+
+    <button type="submit">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

@@ -1,0 +1,16 @@
+@model COMP003B.LectureActivity6.Models.Enrollment
+
+<h2>Edit Enrollment</h2>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="EnrollmentId" />
+    <div>
+        <label>Student</label>
+        <select asp-for="StudentId" asp-items="ViewBag.StudentId"></select>
+    </div>
+    <div>
+        <label>Course</label>
+        <select asp-for="CourseId" asp-items="ViewBag.CourseId"></select>
+    </div>
+    <button type="submit">Save</button>
+</form>
+<a asp-action="Index">Back to List</a>
