@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using COMP003B.LectureActivity6.Data; 
 using COMP003B.LectureActivity6.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace COMP003B.LectureActivity6.Controllers
 {
@@ -24,7 +23,7 @@ namespace COMP003B.LectureActivity6.Controllers
             return View(await enrollments.ToListAsync());
         }
         //Get:Enrollment/Details
-        public async Task<IActionResult> Detail(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
                 return NotFound();
@@ -127,7 +126,7 @@ namespace COMP003B.LectureActivity6.Controllers
         {
             var enrollment = await _context.Enrollments.FindAsync(id);
             if (enrollment != null)
-                _context.Courses.Remove(enrollment);
+                _context.Enrollments.Remove(enrollment);
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
