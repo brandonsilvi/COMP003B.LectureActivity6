@@ -5,11 +5,11 @@ using COMP003B.LectureActivity6.Models;
 
 namespace COMP003B.LectureActivity6.Controllers
 {
-    public class CourseController : Controller
+    public class CoursesController : Controller
     {
         private readonly WebDevAcademyContext _context;
 
-        public CourseController(WebDevAcademyContext context)
+        public CoursesController(WebDevAcademyContext context)
         {
             _context = context;
         }
@@ -19,7 +19,7 @@ namespace COMP003B.LectureActivity6.Controllers
             return View(await _context.Courses.ToListAsync());
         }
         //Get:Courses/Details
-        public async Task<IActionResult> Detail(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
                 return NotFound();

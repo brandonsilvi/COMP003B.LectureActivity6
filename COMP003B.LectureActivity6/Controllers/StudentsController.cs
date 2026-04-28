@@ -16,10 +16,10 @@ namespace COMP003B.LectureActivity6.Controllers
         //Get:students
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Courses.ToListAsync());
+            return View(await _context.Students.ToListAsync());
         }
         //Get:students/Details
-        public async Task<IActionResult> Detail(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
                 return NotFound();
